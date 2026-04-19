@@ -153,6 +153,10 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 2. 先用 `page-blueprint` 生成页面蓝图。
 3. 再用 `page-builder` 基于批准版蓝图落代码。
 
+详细安装说明见：
+
+- [安装说明](docs/INSTALL.zh-CN.md)
+
 ## 现在可以当 plugin 吗
 
 可以说是“**已经有 plugin 包结构**”，但 **Codex 还没有像 skill-installer 那样的 GitHub 远程一键 plugin 安装路径**。
@@ -170,6 +174,17 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 
 - 想远程从 GitHub 装：最稳的还是安装 skills
 - 想按 plugin 用：更适合把仓库 clone 或解压到本地，再让 Codex 指向 `plugins/page-blueprint/`
+
+### 本地 plugin 安装最小步骤
+
+1. 把 `plugins/page-blueprint/` 放到本地插件目录：
+   - Windows：`%USERPROFILE%\plugins\page-blueprint`
+   - macOS / Linux：`~/plugins/page-blueprint`
+2. 创建或更新：
+   - Windows：`%USERPROFILE%\.agents\plugins\marketplace.json`
+   - macOS / Linux：`~/.agents/plugins/marketplace.json`
+3. 加入 `page-blueprint` 的 plugin entry
+4. 重启 Codex
 
 ## 首次使用建议流程
 
@@ -198,6 +213,24 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 3. 先产出页面蓝图。
 4. 可选生成 Figma 结构稿。
 5. 只有当真实代码仓库存在时，再进入 `page-builder`。
+
+## FAQ
+
+### 现在最推荐的安装方式是什么
+
+当前最推荐的还是按 skills 安装，因为远程安装链路最直接。
+
+### 什么时候适合按 plugin 用
+
+当你想要本地 plugin 目录、插件元数据和 marketplace 入口时，更适合走本地 plugin 路径。
+
+### 没有 UI 仓库还能用吗
+
+可以。没有 UI 仓库时，先走 `page-blueprint` 的 greenfield 模式，先产出页面蓝图，再决定后续是否落代码。
+
+### 一定要 Figma 吗
+
+不一定。只有当你很在意具体构图、模块位置、比例和视觉定稿时，Figma 才明显更有价值。
 
 ## 版本策略
 

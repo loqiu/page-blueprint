@@ -42,3 +42,39 @@ Use this plugin when you want Codex to:
 
 This plugin is self-contained inside `plugins/page-blueprint/`.
 It is intended for local plugin installation or future plugin-oriented release packaging.
+
+## Local install
+
+Place this directory at:
+
+- Windows: `%USERPROFILE%\plugins\page-blueprint`
+- macOS / Linux: `~/plugins/page-blueprint`
+
+Then create or update:
+
+- Windows: `%USERPROFILE%\.agents\plugins\marketplace.json`
+- macOS / Linux: `~/.agents/plugins/marketplace.json`
+
+Example plugin entry:
+
+```json
+{
+  "name": "page-blueprint",
+  "source": {
+    "source": "local",
+    "path": "./plugins/page-blueprint"
+  },
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Coding"
+}
+```
+
+Restart Codex after wiring the marketplace entry.
+
+## When to use plugin install vs skills install
+
+- Use **skills install** if you want the shortest remote GitHub-based setup.
+- Use **plugin install** if you want this repo bundled as one local plugin directory with metadata and marketplace wiring.

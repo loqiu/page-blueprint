@@ -18,6 +18,27 @@ Page Blueprint is a dual-skill repository for Codex:
 
 This repo is built for real product pages, not isolated mockups. It pushes Codex to decide page mode first, keep one dominant surface, respect route/context/state realism, and avoid decorative demo-dashboard patterns.
 
+## Quick start
+
+### Install as skills
+
+```powershell
+python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
+  --repo loqiu/page-blueprint `
+  --path skills/page-blueprint skills/page-builder `
+  --ref v0.1.1
+```
+
+Then restart Codex.
+
+### First-run prompt
+
+```text
+Use page-blueprint with this frontend repo.
+Inspect the project, recommend the best first target page, decide page mode and shell mode,
+and draft an approved blueprint before any code changes.
+```
+
 ## What ships in `v0.1.1`
 
 - Dual skill workflow:
@@ -71,6 +92,11 @@ shared/
   guides/
 output/
   imagegen/
+plugins/
+  page-blueprint/
+.agents/
+  plugins/
+docs/
 ```
 
 ## Core concepts
@@ -147,6 +173,10 @@ After install:
 2. Use `page-blueprint` to draft a page blueprint.
 3. Use `page-builder` to implement from the approved blueprint.
 
+Detailed install instructions:
+
+- [Plugin and skills install guide](docs/INSTALL.md)
+
 ## Plugin package
 
 This repo now also contains a plugin package:
@@ -171,6 +201,38 @@ So today:
 
 This means the release is now **plugin-packaged**, but Codex does not yet treat a GitHub release asset as a one-click plugin install source by default.
 
+## Local plugin install
+
+If you want to use the packaged plugin instead of installing the two skills directly:
+
+1. Clone this repository locally or download the plugin zip from the latest release.
+2. Place `plugins/page-blueprint/` under your local plugin root, for example:
+   - Windows: `%USERPROFILE%\plugins\page-blueprint`
+   - macOS / Linux: `~/plugins/page-blueprint`
+3. Create or update your local marketplace file:
+   - Windows: `%USERPROFILE%\.agents\plugins\marketplace.json`
+   - macOS / Linux: `~/.agents/plugins/marketplace.json`
+4. Add this entry:
+
+```json
+{
+  "name": "page-blueprint",
+  "source": {
+    "source": "local",
+    "path": "./plugins/page-blueprint"
+  },
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Coding"
+}
+```
+
+5. Restart Codex.
+
+The repository already includes a repo-local example marketplace file at `.agents/plugins/marketplace.json`.
+
 ## Suggested first-run workflow
 
 ### If you already have a UI repo
@@ -186,6 +248,14 @@ This means the release is now **plugin-packaged**, but Codex does not yet treat 
 5. Optionally push the blueprint into Figma.
 6. Run `page-builder`.
 
+Example:
+
+```text
+Use page-blueprint with C:\WorkSpace\Vue\moneykeeper-vue.
+Inspect the repo first, recommend the best first target page,
+and draft an approved blueprint in visual-redesign mode.
+```
+
 ### If you do not have a UI repo yet
 
 1. Start with `page-blueprint` in greenfield mode.
@@ -198,6 +268,26 @@ This means the release is now **plugin-packaged**, but Codex does not yet treat 
 3. Produce the blueprint first.
 4. Optionally create Figma structure from that blueprint.
 5. Build code only when a real target codebase exists.
+
+## FAQ
+
+### Is this repo better installed as skills or as a plugin?
+
+Today, install as skills if you want the shortest remote setup path.  
+Use the plugin package if you want a local plugin-style bundle with plugin metadata and marketplace wiring.
+
+### Can I install directly from a GitHub release asset?
+
+For the skills workflow, the stable path is still installing by repo + tag through Codex's skill installer.  
+For the plugin workflow, the release zip is mainly a convenient local unpack target.
+
+### Do I need a UI repo to use this?
+
+No. Without a UI repo, start in greenfield mode with `page-blueprint`. The output becomes a product-grade page blueprint, not a repo-specific implementation plan.
+
+### Do I need Figma?
+
+No. Figma is optional. It becomes useful when you care about exact module positions, proportions, and visual composition beyond what the blueprint can specify in text.
 
 ## Versioning
 
