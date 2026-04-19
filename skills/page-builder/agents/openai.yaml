@@ -1,0 +1,4 @@
+interface:
+  display_name: "Page Builder"
+  short_description: "Implement frontend pages from approved blueprints"
+  default_prompt: "Use $page-builder to implement a frontend page from an approved page blueprint, shared design rules, and visual reference."
