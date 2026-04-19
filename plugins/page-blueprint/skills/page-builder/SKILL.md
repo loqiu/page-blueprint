@@ -1,6 +1,6 @@
 ---
 name: page-builder
-description: Build frontend page implementations from an approved page blueprint, shared design rules, and a visual reference. Use when Codex needs to turn a finalized page blueprint into real UI code without drifting from the intended route, information architecture, component contracts, states, or business copy.
+description: Implement approved frontend page blueprints in code. Use when Codex needs to build or refactor a real product page from an agreed blueprint, visual reference, and existing UI repo while preserving route, hierarchy, shell mode, states, and business copy.
 ---
 
 Implement approved page blueprints in code. Treat the blueprint as the logic source of truth, the mock or screenshot as the visual source of truth, and the target codebase as the implementation source of truth.

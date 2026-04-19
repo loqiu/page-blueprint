@@ -1,6 +1,6 @@
 ---
 name: page-blueprint
-description: Generate detailed frontend page blueprint documents from design guidelines, product context, and target-page goals. Use when Codex needs to plan, rewrite, or standardize a page before coding, especially for page-mode selection, route design, information architecture, module breakdown, component contracts, state handling, and business copy.
+description: Draft implementation-ready frontend page blueprints from product goals, design rules, screenshots, and repo context. Use when Codex needs to inspect a UI repo, choose page mode and shell mode, define route/context/state behavior, and produce a reviewable page plan before coding.
 ---
 
 Turn scattered page goals and design rules into one reviewable page blueprint document. Produce documentation first, not implementation code, unless the user explicitly asks for code after the blueprint is agreed.
