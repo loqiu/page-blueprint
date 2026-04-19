@@ -74,6 +74,12 @@ Example plugin entry:
 
 Restart Codex after wiring the marketplace entry.
 
+## Upgrade
+
+1. Download the latest plugin zip from the newest release.
+2. Replace the local `page-blueprint` plugin directory.
+3. Restart Codex.
+
 ## When to use plugin install vs skills install
 
 - Use **skills install** if you want the shortest remote GitHub-based setup.

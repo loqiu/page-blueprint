@@ -153,9 +153,32 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 2. 先用 `page-blueprint` 生成页面蓝图。
 3. 再用 `page-builder` 基于批准版蓝图落代码。
 
+当前推荐版本：`v0.1.1`
+
 详细安装说明见：
 
 - [安装说明](docs/INSTALL.zh-CN.md)
+
+## Upgrade / 升级
+
+### Skills
+
+升级时，重新执行安装命令并指向新的 tag：
+
+```powershell
+python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
+  --repo loqiu/page-blueprint `
+  --path skills/page-blueprint skills/page-builder `
+  --ref v0.1.1
+```
+
+然后重启 Codex。
+
+### Plugin
+
+1. 下载最新 release 里的 plugin zip
+2. 覆盖本地 `page-blueprint` plugin 目录
+3. 重启 Codex
 
 ## 现在可以当 plugin 吗
 

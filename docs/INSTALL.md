@@ -7,6 +7,8 @@ This repository can be used in two forms:
 
 For most users, **skills install is the fastest path**.
 
+Current documented version: `v0.1.1`
+
 ## 1. Install as skills
 
 Use Codex's built-in skill installer against a tagged release.
@@ -34,6 +36,19 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 1. Restart Codex.
 2. Start with `page-blueprint`.
 3. Only after the blueprint is approved, use `page-builder`.
+
+### Upgrade
+
+To upgrade skills, re-run the same install command with the newer tag:
+
+```powershell
+python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
+  --repo loqiu/page-blueprint `
+  --path skills/page-blueprint skills/page-builder `
+  --ref v0.1.1
+```
+
+Then restart Codex.
 
 ## 2. Install as a local plugin
 
@@ -99,6 +114,14 @@ If your marketplace file already exists, append only the plugin entry inside `pl
 ### Step 3: restart Codex
 
 After restart, Codex can discover the plugin through your local marketplace.
+
+### Upgrade
+
+To upgrade the local plugin:
+
+1. Download the latest plugin zip from the newest GitHub release.
+2. Replace your local `page-blueprint` plugin directory.
+3. Restart Codex.
 
 ## Which install form should I choose?
 

@@ -7,6 +7,8 @@
 
 对大多数用户，**按 skills 安装是最快的路径**。
 
+当前文档对应版本：`v0.1.1`
+
 ## 1. 按 skills 安装
 
 使用 Codex 内置的 skill installer，直接从带 tag 的 GitHub 仓库安装。
@@ -34,6 +36,19 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 1. 重启 Codex。
 2. 先用 `page-blueprint`。
 3. 只有在蓝图被批准后，再用 `page-builder`。
+
+### 升级
+
+升级 skills 时，重新执行同一条安装命令，只是把 tag 改成新版本：
+
+```powershell
+python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
+  --repo loqiu/page-blueprint `
+  --path skills/page-blueprint skills/page-builder `
+  --ref v0.1.1
+```
+
+然后重启 Codex。
 
 ## 2. 按本地 plugin 安装
 
@@ -99,6 +114,14 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 ### 第三步：重启 Codex
 
 重启后，Codex 就能通过本地 marketplace 发现这个 plugin。
+
+### 升级
+
+升级本地 plugin 时：
+
+1. 下载最新 release 里的 plugin zip
+2. 覆盖本地 `page-blueprint` 目录
+3. 重启 Codex
 
 ## 该选哪种安装方式
 

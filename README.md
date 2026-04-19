@@ -31,6 +31,8 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 
 Then restart Codex.
 
+Current recommended version: `v0.1.1`
+
 ### First-run prompt
 
 ```text
@@ -176,6 +178,27 @@ After install:
 Detailed install instructions:
 
 - [Plugin and skills install guide](docs/INSTALL.md)
+
+## Upgrade
+
+### Skills
+
+Re-run the install command against the new tag:
+
+```powershell
+python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
+  --repo loqiu/page-blueprint `
+  --path skills/page-blueprint skills/page-builder `
+  --ref v0.1.1
+```
+
+Then restart Codex.
+
+### Plugin
+
+1. Download the latest plugin zip from the newest release.
+2. Replace your local `page-blueprint` plugin directory.
+3. Restart Codex.
 
 ## Plugin package
 
