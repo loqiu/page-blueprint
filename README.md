@@ -9,7 +9,7 @@
 ![Shell](https://img.shields.io/badge/Shell%20Mode-Workspace%20%7C%20Centered-0f766e?style=flat-square)
 ![Figma](https://img.shields.io/badge/Figma-MCP%20Ready-f97316?style=flat-square)
 ![License](https://img.shields.io/badge/License-GPL--2.0-16a34a?style=flat-square)
-![Release](https://img.shields.io/badge/Release-v0.1.0-7c3aed?style=flat-square)
+![Release](https://img.shields.io/badge/Release-v0.1.1-7c3aed?style=flat-square)
 
 Page Blueprint is a dual-skill repository for Codex:
 
@@ -18,7 +18,7 @@ Page Blueprint is a dual-skill repository for Codex:
 
 This repo is built for real product pages, not isolated mockups. It pushes Codex to decide page mode first, keep one dominant surface, respect route/context/state realism, and avoid decorative demo-dashboard patterns.
 
-## What ships in `v0.1.0`
+## What ships in `v0.1.1`
 
 - Dual skill workflow:
   - `skills/page-blueprint`
@@ -35,6 +35,9 @@ This repo is built for real product pages, not isolated mockups. It pushes Codex
 - Example artifact:
   - `shared/examples/moneykeeper-vue-statistics-blueprint.md`
 - Figma-friendly planning flow for turning blueprints into editable design structure
+- First plugin packaging layer:
+  - `plugins/page-blueprint/`
+  - `.agents/plugins/marketplace.json`
 
 ## Why this repo exists
 
@@ -103,19 +106,17 @@ Spacing-only rewrites do not count.
 
 ## Install in Codex
 
-This repository is currently a **skills repository**, not a Codex plugin bundle.
+This repository now ships in two installable forms:
 
-That means:
-
-- `v0.1.0` can be installed as versioned skills
-- `v0.1.0` is **not** yet a one-click Codex plugin package
+- versioned **skills** from the repo root
+- a repo-local **plugin package** under `plugins/page-blueprint/`
 
 ### Recommended install path
 
-Ask Codex to use the built-in `$skill-installer` skill with this repo and this tag:
+For most users, the most stable path is still installing the skills by tag with Codex's built-in skill installer:
 
 - repo: `loqiu/page-blueprint`
-- ref: `v0.1.0`
+- ref: `v0.1.1`
 - paths:
   - `skills/page-blueprint`
   - `skills/page-builder`
@@ -128,7 +129,7 @@ Windows:
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.0
+  --ref v0.1.1
 ```
 
 macOS / Linux:
@@ -137,7 +138,7 @@ macOS / Linux:
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo loqiu/page-blueprint \
   --path skills/page-blueprint skills/page-builder \
-  --ref v0.1.0
+  --ref v0.1.1
 ```
 
 After install:
@@ -146,18 +147,29 @@ After install:
 2. Use `page-blueprint` to draft a page blueprint.
 3. Use `page-builder` to implement from the approved blueprint.
 
-## Can this release be used as a Codex plugin?
+## Plugin package
 
-Not directly.
+This repo now also contains a plugin package:
 
-`v0.1.0` is a tagged release for a **skills repo**.  
-To become a true Codex plugin release, this repository would also need plugin packaging such as:
+- `plugins/page-blueprint/.codex-plugin/plugin.json`
 
-- `.codex-plugin/plugin.json`
-- plugin metadata and packaging layout
-- a plugin-oriented installation path
+That package includes self-contained copies of:
 
-If needed, that can be added in a later release without changing the core skill workflow.
+- `skills/`
+- `shared/`
+- plugin metadata
+- plugin assets
+
+### Important install note
+
+Codex currently has a built-in **skill installer** workflow, but not the same remote one-command installer for GitHub-hosted plugins.
+
+So today:
+
+- the easiest remote install path is still the **skills** install shown above
+- the bundled plugin package is best used by cloning or unpacking the repo locally and exposing `plugins/page-blueprint/` through a local marketplace entry
+
+This means the release is now **plugin-packaged**, but Codex does not yet treat a GitHub release asset as a one-click plugin install source by default.
 
 ## Suggested first-run workflow
 
@@ -192,6 +204,7 @@ If needed, that can be added in a later release without changing the core skill 
 This repository is intended to evolve through tagged releases.
 
 - `v0.1.0`: first public dual-skill release
+- `v0.1.1`: plugin packaging added on top of the dual-skill release
 
 See [CHANGELOG.md](CHANGELOG.md) for release-level changes.
 

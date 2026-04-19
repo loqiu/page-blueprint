@@ -1,0 +1,46 @@
+{
+  "name": "page-blueprint",
+  "version": "0.1.1",
+  "description": "Blueprint-first frontend planning and implementation plugin for Codex.",
+  "author": {
+    "name": "Rochelle",
+    "email": "loqiu.software@gmail.com",
+    "url": "https://github.com/loqiu"
+  },
+  "homepage": "https://github.com/loqiu/page-blueprint",
+  "repository": "https://github.com/loqiu/page-blueprint",
+  "license": "GPL-2.0",
+  "keywords": [
+    "frontend",
+    "ui",
+    "page-blueprint",
+    "codex",
+    "plugin",
+    "design-system"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Page Blueprint",
+    "shortDescription": "Plan and implement real product pages with blueprint-first workflow, shell rules, and builder handoff",
+    "longDescription": "Use Page Blueprint to classify target pages, decide page mode and shell mode, write implementation-ready page blueprints, and implement from approved blueprints without drifting into demo-dashboard UI or route/context mistakes.",
+    "developerName": "Rochelle",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/loqiu/page-blueprint",
+    "privacyPolicyURL": "https://github.com/loqiu/page-blueprint/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/loqiu/page-blueprint/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Inspect my frontend repo, pick the best first target page, and draft an approved page blueprint.",
+      "Use page-blueprint for a visual-redesign blueprint, then hand it to page-builder.",
+      "Turn this target page into a workspace shell or centered page based on the workflow rules."
+    ],
+    "brandColor": "#0f766e",
+    "composerIcon": "./assets/page-blueprint-small.svg",
+    "logo": "./assets/page-blueprint.svg",
+    "screenshots": []
+  }
+}

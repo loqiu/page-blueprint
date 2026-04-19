@@ -9,7 +9,7 @@
 ![Shell](https://img.shields.io/badge/Shell%20Mode-Workspace%20%7C%20Centered-0f766e?style=flat-square)
 ![Figma](https://img.shields.io/badge/Figma-MCP%20Ready-f97316?style=flat-square)
 ![License](https://img.shields.io/badge/License-GPL--2.0-16a34a?style=flat-square)
-![Release](https://img.shields.io/badge/Release-v0.1.0-7c3aed?style=flat-square)
+![Release](https://img.shields.io/badge/Release-v0.1.1-7c3aed?style=flat-square)
 
 Page Blueprint 由两个核心 Skill 组成：
 
@@ -24,7 +24,7 @@ Page Blueprint 由两个核心 Skill 组成：
 - 有真实状态处理的页面
 - 能接进现有系统的页面
 
-## `v0.1.0` 当前包含什么
+## `v0.1.1` 当前包含什么
 
 - 双 Skill 工作流：
   - `skills/page-blueprint`
@@ -41,6 +41,9 @@ Page Blueprint 由两个核心 Skill 组成：
 - 示例产物：
   - `shared/examples/moneykeeper-vue-statistics-blueprint.md`
 - 可接 Figma MCP 的蓝图转结构稿流程
+- 首个 plugin 打包层：
+  - `plugins/page-blueprint/`
+  - `.agents/plugins/marketplace.json`
 
 ## 这个仓库解决什么问题
 
@@ -109,19 +112,17 @@ output/
 
 ## 如何在 Codex 中安装
 
-当前这个仓库是一个 **skills 仓库**，不是一个完整的 Codex plugin 包。
+这个仓库现在同时提供两种交付形态：
 
-这意味着：
-
-- `v0.1.0` 可以作为有版本的 skills 安装
-- `v0.1.0` 还不能当成“一键插件包”直接安装
+- 仓库根目录下可按 tag 安装的 **skills**
+- `plugins/page-blueprint/` 下的 **repo-local plugin 包**
 
 ### 推荐安装方式
 
-直接让 Codex 使用内置的 `$skill-installer`，从这个仓库的 `v0.1.0` tag 安装：
+对大多数用户，当前最稳的远程安装方式仍然是让 Codex 使用内置 `$skill-installer`，从这个仓库的 `v0.1.1` tag 安装：
 
 - repo：`loqiu/page-blueprint`
-- ref：`v0.1.0`
+- ref：`v0.1.1`
 - paths：
   - `skills/page-blueprint`
   - `skills/page-builder`
@@ -134,7 +135,7 @@ Windows：
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.0
+  --ref v0.1.1
 ```
 
 macOS / Linux：
@@ -143,7 +144,7 @@ macOS / Linux：
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo loqiu/page-blueprint \
   --path skills/page-blueprint skills/page-builder \
-  --ref v0.1.0
+  --ref v0.1.1
 ```
 
 安装后：
@@ -152,18 +153,23 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 2. 先用 `page-blueprint` 生成页面蓝图。
 3. 再用 `page-builder` 基于批准版蓝图落代码。
 
-## 这个 release 能直接当 plugin 吗
+## 现在可以当 plugin 吗
 
-不能直接当。
+可以说是“**已经有 plugin 包结构**”，但 **Codex 还没有像 skill-installer 那样的 GitHub 远程一键 plugin 安装路径**。
 
-`v0.1.0` 目前是一个 **skills repo 的发布版本**，不是 Codex 插件包。  
-如果后续要变成真正的 plugin release，还需要补：
+现在仓库里已经有：
 
-- `.codex-plugin/plugin.json`
-- 插件级元数据与打包结构
-- 面向 plugin 的安装路径
+- `plugins/page-blueprint/.codex-plugin/plugin.json`
+- 插件级 `agents/`
+- 插件级 `assets/`
+- 自包含的 `skills/`
+- 自包含的 `shared/`
+- repo-local marketplace：`.agents/plugins/marketplace.json`
 
-这可以在后续版本加上，但不影响当前 skill 工作流。
+但当前实际使用上仍然分两种情况：
+
+- 想远程从 GitHub 装：最稳的还是安装 skills
+- 想按 plugin 用：更适合把仓库 clone 或解压到本地，再让 Codex 指向 `plugins/page-blueprint/`
 
 ## 首次使用建议流程
 
@@ -198,6 +204,7 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 这个仓库会通过 tag / release 持续迭代。
 
 - `v0.1.0`：首个公开的双 Skill 版本
+- `v0.1.1`：在双 Skill 版本之上补齐 plugin 打包结构
 
 具体变化见 [CHANGELOG.md](CHANGELOG.md)。
 
