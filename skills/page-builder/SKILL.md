@@ -19,14 +19,14 @@ The visual reference is optional. The blueprint is not optional.
 ## Workflow
 
 1. Confirm the source package.
-   - If this is the first contact with the repo, read `../../shared/guides/project-intake.md` before deciding how to apply the builder.
+   - If this is the first contact with the repo, read `references/_shared/guides/project-intake.md` before deciding how to apply the builder.
    - Read [references/build-input-contract.md](references/build-input-contract.md).
-   - Read `../../shared/guides/professional-page-generation.md`.
-   - Read `../../shared/guides/shell-mode-reference.md`.
+   - Read `references/_shared/guides/professional-page-generation.md`.
+   - Read `references/_shared/guides/shell-mode-reference.md`.
    - If there is no approved blueprint document, stop and ask to run `$page-blueprint` first.
 2. Gather sources in this order.
    - Approved blueprint document.
-   - Shared design docs under `../../shared/design/`.
+   - Bundled design docs under `references/_shared/design/`.
    - Visual reference: high-fidelity mock, screenshot, or generated blueprint image.
    - Existing codebase routes, layout primitives, components, tokens, and state patterns.
    - Read [references/codebase-intake.md](references/codebase-intake.md) before deciding file placement or component ownership.

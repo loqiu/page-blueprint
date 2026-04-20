@@ -1,6 +1,0 @@
-interface:
-  display_name: "Page Blueprint"
-  short_description: "Plan and build real product pages with blueprint-first workflow, shell mode, and builder handoff"
-  icon_small: "./assets/page-blueprint-small.svg"
-  icon_large: "./assets/page-blueprint.svg"
-  default_prompt: "Use Page Blueprint to inspect a frontend repo, classify the target page, write an approved blueprint, and implement it without drifting from route, shell, state, or hierarchy."

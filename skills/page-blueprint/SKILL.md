@@ -8,7 +8,7 @@ Turn scattered page goals and design rules into one reviewable page blueprint do
 ## Workflow
 
 1. If this is the first contact with a repo, inspect the project first.
-   - Read `../../shared/guides/project-intake.md`.
+   - Read `references/_shared/guides/project-intake.md`.
    - If the user only provides a project path or asks where to start, inspect the repo structure before choosing a target page.
    - If there is no UI repo, skip repo intake and treat the task as a greenfield blueprint request.
 2. Clarify the target page.
@@ -16,7 +16,7 @@ Turn scattered page goals and design rules into one reviewable page blueprint do
    - If the page objective, core entity, or primary action is unclear and a wrong assumption would distort the blueprint, stop and ask a concise question.
 3. Gather evidence in this order.
    - Page-specific source materials: PRD, screenshots, tables, fields, APIs, current routes, business docs.
-   - In-repo design rules: always read `../../shared/design/global/Global-Design.md`, `../../shared/design/global/DESIGN-AGENTS.md`, `../../shared/guides/professional-page-generation.md`, and `../../shared/guides/shell-mode-reference.md` first, then read exactly one matching page-mode document from `../../shared/design/page-modes/`.
+   - Bundled design rules: always read `references/_shared/design/global/Global-Design.md`, `references/_shared/design/global/DESIGN-AGENTS.md`, `references/_shared/guides/professional-page-generation.md`, and `references/_shared/guides/shell-mode-reference.md` first, then read exactly one matching page-mode document from `references/_shared/design/page-modes/`.
    - Existing IA, route, component, and copy conventions.
 4. Classify the page before drafting.
    - Choose exactly one dominant page mode: `overview dashboard`, `monitoring dashboard`, `operations dashboard`, `detail page`, `browse/discovery page`, or `settings/admin page`.
@@ -46,9 +46,9 @@ Turn scattered page goals and design rules into one reviewable page blueprint do
 
 - Follow first principles. Do not jump from vague goals to detailed UI structure without proving the reasoning chain.
 - Prefer the shortest correct path. Do not add fallback flows, compatibility branches, or speculative modules unless the user explicitly asks for them.
-- Treat the in-repo design docs under `../../shared/design/` as the source of truth. Use this skill's other references as structure and fallback, not as a replacement for those design rules.
-- Treat `../../shared/guides/professional-page-generation.md` as a hard constraint for dominant surface discipline, hierarchy, density, route/context realism, table-vs-card decisions, state coverage, and anti-pattern avoidance.
-- Treat `../../shared/guides/shell-mode-reference.md` as the source of truth for `workspace shell` vs `centered page`.
+- Treat the bundled design docs under `references/_shared/design/` as the source of truth. Use this skill's other references as structure and fallback, not as a replacement for those design rules.
+- Treat `references/_shared/guides/professional-page-generation.md` as a hard constraint for dominant surface discipline, hierarchy, density, route/context realism, table-vs-card decisions, state coverage, and anti-pattern avoidance.
+- Treat `references/_shared/guides/shell-mode-reference.md` as the source of truth for `workspace shell` vs `centered page`.
 - Read exactly one dominant page-mode source per page unless the user explicitly asks for cross-mode comparison.
 - Do not invent route names, status models, permission rules, or destructive actions without evidence.
 - Keep one dominant page mode. Secondary patterns may support it, but may not redefine the page.

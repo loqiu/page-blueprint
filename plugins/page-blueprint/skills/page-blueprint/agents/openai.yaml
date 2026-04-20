@@ -1,4 +1,0 @@
-interface:
-  display_name: "Page Blueprint"
-  short_description: "Draft detailed frontend page blueprint docs"
-  default_prompt: "Use $page-blueprint to turn page goals, page-mode rules, and business context into a full page blueprint document."
