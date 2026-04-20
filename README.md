@@ -139,6 +139,8 @@ This repository now ships in two installable forms:
 - versioned **skills** from the repo root
 - a repo-local **plugin package** under `plugins/page-blueprint/`
 
+For public `npx skills add ...` installs, use the self-contained [`public-skills`](https://github.com/loqiu/page-blueprint/tree/public-skills) branch instead of `main`.
+
 ### Recommended install path
 
 For most users, the most stable path is still installing the skills by tag with Codex's built-in skill installer:
@@ -174,6 +176,16 @@ After install:
 1. Restart Codex.
 2. Use `page-blueprint` to draft a page blueprint.
 3. Use `page-builder` to implement from the approved blueprint.
+
+### Public `npx skills` install
+
+If you want to install through the `skills.sh` / `npx skills` ecosystem, use the public distribution branch:
+
+```bash
+npx skills add https://github.com/loqiu/page-blueprint/tree/public-skills --skill page-blueprint page-builder -g -a codex -y --copy
+```
+
+That branch is self-contained for third-party skill installers. The `main` branch remains the source-of-truth development branch.
 
 Detailed install instructions:
 

@@ -9,6 +9,11 @@ For most users, **skills install is the fastest path**.
 
 Current documented version: `v0.1.1`
 
+Important branch split:
+
+- `main`: source-of-truth development branch
+- `public-skills`: self-contained public install branch for `npx skills add ...`
+
 ## 1. Install as skills
 
 Use Codex's built-in skill installer against a tagged release.
@@ -49,6 +54,14 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 ```
 
 Then restart Codex.
+
+### Public `npx skills` install
+
+If you are installing through the `skills.sh` / `npx skills` workflow, use the public distribution branch instead of `main`:
+
+```bash
+npx skills add https://github.com/loqiu/page-blueprint/tree/public-skills --skill page-blueprint page-builder -g -a codex -y --copy
+```
 
 ## 2. Install as a local plugin
 

@@ -9,6 +9,11 @@
 
 当前文档对应版本：`v0.1.1`
 
+重要分支说明：
+
+- `main`：源码真源开发分支
+- `public-skills`：给 `npx skills add ...` 使用的自包含公开安装分支
+
 ## 1. 按 skills 安装
 
 使用 Codex 内置的 skill installer，直接从带 tag 的 GitHub 仓库安装。
@@ -49,6 +54,14 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 ```
 
 然后重启 Codex。
+
+### 通过 `npx skills` 公开安装
+
+如果你要走 `skills.sh` / `npx skills` 这条安装链路，请不要直接指向 `main`，而要使用公开分发分支：
+
+```bash
+npx skills add https://github.com/loqiu/page-blueprint/tree/public-skills --skill page-blueprint page-builder -g -a codex -y --copy
+```
 
 ## 2. 按本地 plugin 安装
 

@@ -117,6 +117,8 @@ output/
 - 仓库根目录下可按 tag 安装的 **skills**
 - `plugins/page-blueprint/` 下的 **repo-local plugin 包**
 
+如果你要走 `npx skills add ...` 这种公开技能安装路径，请使用自包含的 [`public-skills`](https://github.com/loqiu/page-blueprint/tree/public-skills) 分支，而不是 `main`。
+
 ### 推荐安装方式
 
 对大多数用户，当前最稳的远程安装方式仍然是让 Codex 使用内置 `$skill-installer`，从这个仓库的 `v0.1.1` tag 安装：
@@ -154,6 +156,16 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 3. 再用 `page-builder` 基于批准版蓝图落代码。
 
 当前推荐版本：`v0.1.1`
+
+### 通过 `npx skills` 公开安装
+
+如果你要接入 `skills.sh` / `npx skills` 这条公开安装链路，请使用公开分发分支：
+
+```bash
+npx skills add https://github.com/loqiu/page-blueprint/tree/public-skills --skill page-blueprint page-builder -g -a codex -y --copy
+```
+
+这个分支是给第三方 skill installer 用的自包含分发层；`main` 仍然是源码真源分支。
 
 详细安装说明见：
 
