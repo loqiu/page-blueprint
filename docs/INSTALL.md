@@ -7,7 +7,7 @@ This repository can be used in two forms:
 
 For most users, **skills install is the fastest path**.
 
-Current documented version: `v0.1.1`
+Current documented version: `v0.1.2`
 
 Important branch split:
 
@@ -24,7 +24,7 @@ Use Codex's built-in skill installer against a tagged release.
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 ### macOS / Linux
@@ -33,7 +33,7 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo loqiu/page-blueprint \
   --path skills/page-blueprint skills/page-builder \
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 ### After install
@@ -50,7 +50,7 @@ To upgrade skills, re-run the same install command with the newer tag:
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 Then restart Codex.
@@ -88,7 +88,7 @@ The final plugin path should be:
 You can populate that path in either of these ways:
 
 - clone this repository and copy `plugins/page-blueprint/`
-- download the `page-blueprint-plugin-v0.1.1.zip` asset from the release and extract it there
+- download the `page-blueprint-plugin-v0.1.2.zip` asset from the release and extract it there
 
 ### Step 2: create or update marketplace.json
 

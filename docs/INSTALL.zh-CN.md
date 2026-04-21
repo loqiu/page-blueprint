@@ -7,7 +7,7 @@
 
 对大多数用户，**按 skills 安装是最快的路径**。
 
-当前文档对应版本：`v0.1.1`
+当前文档对应版本：`v0.1.2`
 
 重要分支说明：
 
@@ -24,7 +24,7 @@
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 ### macOS / Linux
@@ -33,7 +33,7 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo loqiu/page-blueprint \
   --path skills/page-blueprint skills/page-builder \
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 ### 安装后
@@ -50,7 +50,7 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 然后重启 Codex。
@@ -88,7 +88,7 @@ npx skills add https://github.com/loqiu/page-blueprint/tree/public-skills --skil
 你可以通过两种方式把内容放进去：
 
 - clone 这个仓库，然后拷贝 `plugins/page-blueprint/`
-- 从 release 下载 `page-blueprint-plugin-v0.1.1.zip`，解压到这个位置
+- 从 release 下载 `page-blueprint-plugin-v0.1.2.zip`，解压到这个位置
 
 ### 第二步：创建或更新 marketplace.json
 

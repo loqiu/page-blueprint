@@ -9,7 +9,7 @@
 ![Shell](https://img.shields.io/badge/Shell%20Mode-Workspace%20%7C%20Centered-0f766e?style=flat-square)
 ![Figma](https://img.shields.io/badge/Figma-MCP%20Ready-f97316?style=flat-square)
 ![License](https://img.shields.io/badge/License-GPL--2.0-16a34a?style=flat-square)
-![Release](https://img.shields.io/badge/Release-v0.1.1-7c3aed?style=flat-square)
+![Release](https://img.shields.io/badge/Release-v0.1.2-7c3aed?style=flat-square)
 
 Page Blueprint 由两个核心 Skill 组成：
 
@@ -24,7 +24,7 @@ Page Blueprint 由两个核心 Skill 组成：
 - 有真实状态处理的页面
 - 能接进现有系统的页面
 
-## `v0.1.1` 当前包含什么
+## `v0.1.2` 当前包含什么
 
 - 双 Skill 工作流：
   - `skills/page-blueprint`
@@ -44,6 +44,8 @@ Page Blueprint 由两个核心 Skill 组成：
 - 首个 plugin 打包层：
   - `plugins/page-blueprint/`
   - `.agents/plugins/marketplace.json`
+- 公开自包含安装分支：
+  - `public-skills`
 
 ## 这个仓库解决什么问题
 
@@ -121,10 +123,10 @@ output/
 
 ### 推荐安装方式
 
-对大多数用户，当前最稳的远程安装方式仍然是让 Codex 使用内置 `$skill-installer`，从这个仓库的 `v0.1.1` tag 安装：
+对大多数用户，当前最稳的远程安装方式仍然是让 Codex 使用内置 `$skill-installer`，从这个仓库的 `v0.1.2` tag 安装：
 
 - repo：`loqiu/page-blueprint`
-- ref：`v0.1.1`
+- ref：`v0.1.2`
 - paths：
   - `skills/page-blueprint`
   - `skills/page-builder`
@@ -137,7 +139,7 @@ Windows：
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 macOS / Linux：
@@ -146,7 +148,7 @@ macOS / Linux：
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo loqiu/page-blueprint \
   --path skills/page-blueprint skills/page-builder \
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 安装后：
@@ -155,7 +157,7 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 2. 先用 `page-blueprint` 生成页面蓝图。
 3. 再用 `page-builder` 基于批准版蓝图落代码。
 
-当前推荐版本：`v0.1.1`
+当前推荐版本：`v0.1.2`
 
 ### 通过 `npx skills` 公开安装
 
@@ -181,7 +183,7 @@ npx skills add https://github.com/loqiu/page-blueprint/tree/public-skills --skil
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 然后重启 Codex。
@@ -273,6 +275,7 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 
 - `v0.1.0`：首个公开的双 Skill 版本
 - `v0.1.1`：在双 Skill 版本之上补齐 plugin 打包结构
+- `v0.1.2`：补齐 `public-skills` 公开自包含安装分支
 
 具体变化见 [CHANGELOG.md](CHANGELOG.md)。
 

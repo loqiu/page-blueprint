@@ -2,6 +2,27 @@
 
 All notable changes to this repository will be documented in this file.
 
+## v0.1.2 - 2026-04-21
+
+### Added
+
+- self-contained public install branch: `public-skills`
+- per-skill bundled `_shared` references for third-party `npx skills` installers
+- explicit public install documentation for `npx skills add https://github.com/loqiu/page-blueprint/tree/public-skills ...`
+
+### Changed
+
+- current recommended version to `v0.1.2`
+- plugin manifest version to `0.1.2`
+- install and upgrade docs now distinguish:
+  - `main` as the source-of-truth development branch
+  - `public-skills` as the public self-contained distribution branch
+
+### Notes
+
+- `v0.1.2` is the first version that has been validated in a clean Codex environment for public `npx skills` installation.
+- Use `main` for source browsing and tagged releases; use `public-skills` for `skills.sh` / `npx skills add` installs.
+
 ## v0.1.1 - 2026-04-19
 
 ### Added

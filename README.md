@@ -9,7 +9,7 @@
 ![Shell](https://img.shields.io/badge/Shell%20Mode-Workspace%20%7C%20Centered-0f766e?style=flat-square)
 ![Figma](https://img.shields.io/badge/Figma-MCP%20Ready-f97316?style=flat-square)
 ![License](https://img.shields.io/badge/License-GPL--2.0-16a34a?style=flat-square)
-![Release](https://img.shields.io/badge/Release-v0.1.1-7c3aed?style=flat-square)
+![Release](https://img.shields.io/badge/Release-v0.1.2-7c3aed?style=flat-square)
 
 Page Blueprint is a dual-skill repository for Codex:
 
@@ -26,12 +26,12 @@ This repo is built for real product pages, not isolated mockups. It pushes Codex
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 Then restart Codex.
 
-Current recommended version: `v0.1.1`
+Current recommended version: `v0.1.2`
 
 ### First-run prompt
 
@@ -41,7 +41,7 @@ Inspect the project, recommend the best first target page, decide page mode and 
 and draft an approved blueprint before any code changes.
 ```
 
-## What ships in `v0.1.1`
+## What ships in `v0.1.2`
 
 - Dual skill workflow:
   - `skills/page-blueprint`
@@ -61,6 +61,8 @@ and draft an approved blueprint before any code changes.
 - First plugin packaging layer:
   - `plugins/page-blueprint/`
   - `.agents/plugins/marketplace.json`
+- Public self-contained install branch:
+  - `public-skills`
 
 ## Why this repo exists
 
@@ -146,7 +148,7 @@ For public `npx skills add ...` installs, use the self-contained [`public-skills
 For most users, the most stable path is still installing the skills by tag with Codex's built-in skill installer:
 
 - repo: `loqiu/page-blueprint`
-- ref: `v0.1.1`
+- ref: `v0.1.2`
 - paths:
   - `skills/page-blueprint`
   - `skills/page-builder`
@@ -159,7 +161,7 @@ Windows:
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 macOS / Linux:
@@ -168,7 +170,7 @@ macOS / Linux:
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo loqiu/page-blueprint \
   --path skills/page-blueprint skills/page-builder \
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 After install:
@@ -201,7 +203,7 @@ Re-run the install command against the new tag:
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
   --repo loqiu/page-blueprint `
   --path skills/page-blueprint skills/page-builder `
-  --ref v0.1.1
+  --ref v0.1.2
 ```
 
 Then restart Codex.
@@ -330,6 +332,7 @@ This repository is intended to evolve through tagged releases.
 
 - `v0.1.0`: first public dual-skill release
 - `v0.1.1`: plugin packaging added on top of the dual-skill release
+- `v0.1.2`: public self-contained `npx skills` distribution via `public-skills`
 
 See [CHANGELOG.md](CHANGELOG.md) for release-level changes.
 
